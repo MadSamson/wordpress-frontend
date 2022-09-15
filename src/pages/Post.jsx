@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import parse from 'html-react-parser';
+import { useParams, Link } from "react-router-dom";
+import parse from 'html-react-parser'; 
 
 export default function Post() {
     const [postData, setPostData] = useState(null);
@@ -17,6 +17,7 @@ export default function Post() {
       if (!postData) return <div>Loading...</div>;
   return (
     <div className="bg-gray-200 min-h-screen p-12">
+    <Link to={'/'}>Home</Link>
     <div className="container shadow-lg mx-auto bg-green-100 rounded-lg">
       <div className="relative">
         <div className="h-full w-full flex items-center justify-center p-8">
