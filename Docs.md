@@ -3,6 +3,9 @@
 https://pantheon.io
 https://pantheon.io/docs/guides/environment-configuration
 
+1- Clone or duplicate the wordpress sourcecode from my pantheon. The Duplicator will be needed if your want to cuplicate the project. here is the instruction:
+https://www.wpbeginner.com/wp-tutorials/how-to-move-live-wordpress-site-to-local-server/
+
 ## Source Code
 https://dashboard.pantheon.io/
 https://pantheon.io/docs/develop-wordpress

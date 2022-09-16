@@ -63,16 +63,16 @@ export default function AllPosts() {
             {allPostsData &&
               allPostsData.map((post, index) => (
                 <Link to={"/" + post.id} key={post.id}>
-                  <span
+                  <div
                     className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-green-400"
                     key={index}
                   >
-                  <span className="block relative h-full flex justify-end items-end pr-4 pb-4">
+                  <div className="block relative h-full flex justify-end items-end pr-4 pb-4">
                       <h2 className="text-gray-800 text-lg font-bold px-3 py-4 bg-red-700 text-red-100 bg-opacity-75 rounded">
                       {post.slug}
                       </h2>
-                  </span>
-                  </span>
+                  </div>
+                  </div>
                 </Link>
               ))}
           </div>
