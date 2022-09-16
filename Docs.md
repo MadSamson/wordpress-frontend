@@ -30,4 +30,14 @@ REACT_APP_API_URL = "ENTER YOUR URL"
 ## Run the project locally
 npm start
 
+## Deploying on Vercel
 
+1- Go to vercel and create an account / log in.
+2- Click the Add New button and choose Project.
+3- Connect your Github to Vercel
+4- Import your repository
+5- Select the Client-folder as Root Directory
+6- Add environment variables (same as in your .env file)
+7- Deploy project
+
+https://vercel.com/guides/deploying-nextjs-with-vercel
