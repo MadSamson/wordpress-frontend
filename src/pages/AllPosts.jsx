@@ -5,6 +5,8 @@ export default function AllPosts() {
   const [allPostsData, setAllPosts] = useState(null);
   const [tags, setTags] = useState(null)
   const [categories, setCategories] = useState(null)
+
+  let url = process.env.REACT_APP_API_URL
   
   useEffect(() => {
     getPosts()
@@ -13,7 +15,7 @@ export default function AllPosts() {
   }, []);
 
   function getTags() {
-    fetch('https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/tags')
+    fetch(`${url}/tags`)
     .then(res => res.json())
     .then(data => {
         console.log(data);
@@ -21,7 +23,7 @@ export default function AllPosts() {
     }) 
   }
   function getCategories() {
-    fetch('https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/categories')
+    fetch(`${url}/categories`)
     .then(res => res.json())
     .then(data => {
         console.log(data);
@@ -29,7 +31,7 @@ export default function AllPosts() {
     }) 
   }
   function getPosts() {
-    fetch('https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/posts')
+    fetch(`${url}/posts`)
     .then(res => res.json())
     .then(data => {
         console.log(data);
