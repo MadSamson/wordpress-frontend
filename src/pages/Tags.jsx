@@ -5,8 +5,9 @@ export default function AllPosts() {
   const [allPostsData, setAllPosts] = useState(null);
   const { id } = useParams();
   
+  let url = process.env.REACT_APP_API_URL
   useEffect(() => {
-    fetch(`https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/posts?tags=${id}`)
+    fetch(`${url}/posts?tags=${id}`)
     .then(res => res.json())
     .then(data => {
         console.log(data);

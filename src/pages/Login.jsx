@@ -7,10 +7,10 @@ export default function LoginPage() {
  const [password, setPassword] = useState("")
  function handleOnSubmit(e) {
   e.preventDefault();
-  const url = `https://dev-samsblog.pantheonsite.io/wp-json/jwt-auth/v1/token`;
+  let url = process.env.REACT_APP_API_URL
   const payload = {username, password}
 
-  fetch(url, {
+  fetch(`${url}/token`, {
    method: "POST",
    headers: {
     "Content-Type": "application/json",

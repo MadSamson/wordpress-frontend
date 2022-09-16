@@ -20,3 +20,14 @@ README.md
 # Integration
 1- clone this following repo
 https://github.com/MadSamson/wordpress-frontend
+
+2- Install packages
+npm install
+
+3- Add an .env file at the Client directory and add your wordpress adress
+REACT_APP_API_URL = "ENTER YOUR URL"
+
+## Run the project locally
+npm start
+
+

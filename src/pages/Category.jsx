@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router-dom";
 export default function AllPosts() {
   const [allPostsData, setAllPosts] = useState(null);
   const { id } = useParams();
-  
+  let url = process.env.REACT_APP_API_URL
   useEffect(() => {
-    fetch(`https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/posts?categories=${id}`)
+    fetch(`${url}/posts?categories=${id}`)
     .then(res => res.json())
     .then(data => {
         console.log(data);

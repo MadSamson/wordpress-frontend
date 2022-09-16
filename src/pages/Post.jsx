@@ -6,8 +6,9 @@ export default function Post() {
     const [postData, setPostData] = useState(null);
     const { id } = useParams();
     console.log(id);
+    let url = process.env.REACT_APP_API_URL
     useEffect(() => {
-        fetch(`https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/posts/${id}`)
+        fetch(`${url}/posts/${id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data);
