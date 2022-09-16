@@ -7,10 +7,11 @@ export default function LoginPage() {
  const [password, setPassword] = useState("")
  function handleOnSubmit(e) {
   e.preventDefault();
-  let url = process.env.REACT_APP_API_URL
+  const url = process.env.REACT_APP_API_TOKEN
+  
   const payload = {username, password}
 
-  fetch(`${url}/token`, {
+  fetch(url, {
    method: "POST",
    headers: {
     "Content-Type": "application/json",
