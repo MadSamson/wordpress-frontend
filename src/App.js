@@ -4,6 +4,7 @@ import Post from './pages/Post'
 import Login from './pages/Login'
 import Admin from './pages/Admin'
 import Category from './pages/Category'
+import Tags from './pages/Tags'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path='/' element={<AllPosts/>}/>
       <Route path='/:id' element={<Post/>}/>
       <Route path='/category/:id' element={<Category/>}/>
+      <Route path='/tags/:id' element={<Tags/>}/>
       <Route path='/admin' element={<Admin/>}/>
     </Routes>
   );

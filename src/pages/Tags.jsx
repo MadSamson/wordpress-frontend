@@ -1,57 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function AllPosts() {
   const [allPostsData, setAllPosts] = useState(null);
-  const [tags, setTags] = useState(null)
-  const [categories, setCategories] = useState(null)
+  const { id } = useParams();
   
   useEffect(() => {
-    getPosts()
-    getCategories()
-    getTags()
-  }, []);
-
-  function getTags() {
-    fetch('https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/tags')
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-        setTags(data)
-    }) 
-  }
-  function getCategories() {
-    fetch('https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/categories')
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-        setCategories(data)
-    }) 
-  }
-  function getPosts() {
-    fetch('https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/posts')
+    fetch(`https://dev-samsblog.pantheonsite.io/wp-json/wp/v2/posts?tags=${id}`)
     .then(res => res.json())
     .then(data => {
         console.log(data);
         setAllPosts(data)
     })
-  }
+  }, []);
+
+
   return (
     <>
       <div className="bg-green-100 min-h-screen p-12">
-      <Link to={'/login'}>Login</Link>
+      <Link to={'/'}>Home</Link>
         <div className="container mx-auto">
-        {categories &&
-          categories.map((categoriy, index) => (
-            <span key={categoriy.id}><Link to={'/category/'+categoriy.id}>|{categoriy.slug}</Link></span>
-          ))
-        }
-        <br />
-        {tags &&
-          tags.map((tag, index) => (
-            <span key={tag.id}><Link to={'/tags/'+tag.id}>|{tag.slug}</Link></span>
-          ))
-        }
           <h2 className="text-5xl flex justify-center cursive">Blog Posts</h2>
           <h3 className="text-lg text-gray-600 flex justify-center mb-12">
             Welcome to my blog posts page!
